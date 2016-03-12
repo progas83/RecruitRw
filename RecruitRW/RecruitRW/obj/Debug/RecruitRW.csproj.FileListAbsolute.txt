@@ -77,6 +77,5 @@ D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\bin\Microsoft.Owin.Security.OAuth.xm
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\bin\Microsoft.Owin.Security.Google.xml
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\bin\Microsoft.Owin.Security.Twitter.xml
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\obj\Debug\RecruitRW.csprojResolveAssemblyReference.cache
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\obj\Debug\RecruitRW.dll
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\obj\Debug\RecruitRW.pdb

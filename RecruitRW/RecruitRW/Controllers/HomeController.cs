@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecruitRW.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,30 @@ namespace RecruitRW.Controllers
     {
         public ActionResult Index()
         {
+            try
+            {
+                //InitDbManually();
+                
+
+            }
+            catch (Exception ex)
+            {
+
+            }
             return View();
+        }
+
+        private void InitDbManually()
+        {
+            using (RecruitContext db = new RecruitContext())
+            {
+                //db.Database.Initialize(false);
+
+                //var test = db.ContactTypes;
+                db.ContactTypes.Add(new ContactType { TypeName = "Tel" });
+                db.SaveChanges();
+                var test = db.ContactTypes;
+            }
         }
 
         public ActionResult About()

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RecruitRW.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,20 @@ namespace RecruitRW
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //try
+            //{
+            //   // Database.SetInitializer<RecruitContext>(new CreateDatabaseIfNotExists<RecruitContext>());
+            //    Database.SetInitializer<RecruitContext>(new RecruitDbInitializer());
+            //    using (var context = new RecruitContext())
+            //    {
+            //        context.Database.Initialize(true);
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+
+            //}
+          
         }
     }
 }
