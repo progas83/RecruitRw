@@ -8,10 +8,12 @@ namespace RecruitRW.Models
 {
     public class RecruitContext : DbContext
     {
+        //   private string connectionString=@"Data Source = ILYAPC\SQLEXPRESS; AttachDbFilename=|DataDirectory|RwDataBase.mdf;Integrated Security = true";
+        //public RecruitContext() :  base(@"Data Source = ILYAPC\LIONDB; AttachDbFilename=|DataDirectory|RwDataBase1.mdf;Integrated Security = False")//
         public RecruitContext() : base("RwDataBase")
         {
             //Database.SetInitializer<RecruitContext>(new CreateDatabaseIfNotExists<RecruitContext>());
-         //   Database.SetInitializer<RecruitContext>(new RecruitDbInitializer());
+            //   Database.SetInitializer<RecruitContext>(new RecruitDbInitializer());
 
         }
         public DbSet<Candidate> Candidates { get; set; }

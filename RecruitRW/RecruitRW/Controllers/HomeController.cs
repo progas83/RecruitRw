@@ -13,7 +13,7 @@ namespace RecruitRW.Controllers
         {
             try
             {
-                InitDbManually();
+             //   InitDbManually();
                 
 
             }
@@ -21,7 +21,8 @@ namespace RecruitRW.Controllers
             {
 
             }
-            return View();
+            return RedirectToAction("Index", "Candidates", null);
+           // return View();
         }
 
         private void InitDbManually()

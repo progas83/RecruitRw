@@ -79,3 +79,4 @@ D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\bin\Microsoft.Owin.Security.Twitter.
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\obj\Debug\RecruitRW.dll
 D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\obj\Debug\RecruitRW.pdb
+D:\MyGitCloud\RecruitRw\RecruitRW\RecruitRW\obj\Debug\RecruitRW.csprojResolveAssemblyReference.cache

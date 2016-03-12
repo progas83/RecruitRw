@@ -24,7 +24,7 @@ namespace RecruitRW
                 Database.SetInitializer<RecruitContext>(new RecruitDbInitializer());
                 using (var context = new RecruitContext())
                 {
-                    context.Database.Initialize(false);
+                    context.Database.Initialize(true);
                 }
             }
             catch (Exception ex)
