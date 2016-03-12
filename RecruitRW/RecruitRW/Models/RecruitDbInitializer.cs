@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RecruitRW.Models
 {
-    public class RecruitDbInitializer : DropCreateDatabaseAlways<RecruitContext> // DropCreateDatabaseIfModelChanges<RecruitContext>
+    public class RecruitDbInitializer : DropCreateDatabaseIfModelChanges<RecruitContext>
     {
         protected override void Seed(RecruitContext context)
         {

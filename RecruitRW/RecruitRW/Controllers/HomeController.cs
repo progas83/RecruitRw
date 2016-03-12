@@ -13,7 +13,7 @@ namespace RecruitRW.Controllers
         {
             try
             {
-                //InitDbManually();
+                InitDbManually();
                 
 
             }

@@ -18,20 +18,20 @@ namespace RecruitRW
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //try
-            //{
-            //   // Database.SetInitializer<RecruitContext>(new CreateDatabaseIfNotExists<RecruitContext>());
-            //    Database.SetInitializer<RecruitContext>(new RecruitDbInitializer());
-            //    using (var context = new RecruitContext())
-            //    {
-            //        context.Database.Initialize(true);
-            //    }
-            //}
-            //catch(Exception ex)
-            //{
+            try
+            {
+                Database.SetInitializer<RecruitContext>(new CreateDatabaseIfNotExists<RecruitContext>());
+                Database.SetInitializer<RecruitContext>(new RecruitDbInitializer());
+                using (var context = new RecruitContext())
+                {
+                    context.Database.Initialize(false);
+                }
+            }
+            catch (Exception ex)
+            {
 
-            //}
-          
+            }
+
         }
     }
 }
