@@ -289,6 +289,7 @@
     <Content Include="Views\Adresses\Edit.cshtml" />
     <Content Include="Views\Adresses\Index.cshtml" />
     <Content Include="Views\Shared\_Adress.cshtml" />
+    <Content Include="Views\Shared\_Skills.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
