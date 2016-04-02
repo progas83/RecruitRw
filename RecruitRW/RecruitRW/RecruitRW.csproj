@@ -290,6 +290,7 @@
     <Content Include="Views\Adresses\Index.cshtml" />
     <Content Include="Views\Shared\_Adress.cshtml" />
     <Content Include="Views\Shared\_Skills.cshtml" />
+    <Content Include="Views\Shared\_SkillAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

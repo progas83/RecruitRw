@@ -13,7 +13,7 @@ namespace RecruitRW.Controllers
         {
             try
             {
-             //   InitDbManually();
+              //  InitDbManually();
                 
 
             }
@@ -29,10 +29,12 @@ namespace RecruitRW.Controllers
         {
             using (RecruitContext db = new RecruitContext())
             {
+                Candidate c = new Candidate { FirstName = "Ilya" };
+                db.Candidates.Add(c);
                 //db.Database.Initialize(false);
 
                 //var test = db.ContactTypes;
-                db.ContactTypes.Add(new ContactType { TypeName = "Tel" });
+              //  db.ContactTypes.Add(new ContactType { TypeName = "Tel" });
                 db.SaveChanges();
                 var test = db.ContactTypes;
             }

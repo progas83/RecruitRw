@@ -17,9 +17,9 @@ namespace RecruitRW.Controllers
         // GET: Candidates
         public ActionResult Index()
         {
-            var candidates = db.Candidates.Include(c => c.Adress);
+           IEnumerable<Candidate> candidates = db.Candidates.Include(c => c.Adress).ToList();
 
-            return View(candidates.ToList());
+            return View(candidates);
         }
 
         // GET: Candidates/Details/5
@@ -43,8 +43,44 @@ namespace RecruitRW.Controllers
             // ViewBag.Id = new SelectList(db.Adresses, "CandidateId", "City");
             Candidate candidate = new Candidate();
             candidate.Adress = new Adress();
-            candidate.RegistrationDate = DateTime.UtcNow;
+            candidate.Skills = new List<Skill>();
+            candidate.RegistrationDate = DateTime.UtcNow.Date;
             return View(candidate);
+        }
+
+        public PartialViewResult _GetSkills(Candidate candidate)
+        {
+            if (candidate.Skills == null)
+                candidate.Skills = new List<Skill>();
+            //List<Skill> skills = new List<Skill>();
+            //skills.Add(new Skill { SkillName = "ASP", SkillValue = 10 });
+            //if(Id!=0)
+            //{
+            //    List<Skill> skills1 = db.Candidates.Include("Skills").FirstOrDefault(item => item.Id == Id).Skills.ToList();
+            //    if (skills1 != null)
+            //        skills = skills1;
+            //}
+            return PartialView("_Skills", candidate.Skills);
+        }
+
+        public PartialViewResult _AddSkill(Skill s)
+        {
+           
+            return PartialView("_SkillAdd", s);
+        }
+
+        public PartialViewResult _AddNewSkill(Candidate candidate, Skill s)
+        {
+            candidate.Skills.Add(s);
+
+            return PartialView("_Skills", candidate.Skills);
+           // return PartialView("_SkillAdd", s);
+        }
+
+        [ChildActionOnly()]
+        public PartialViewResult _AdressPartial(Adress adress)
+        {
+            return PartialView("_Adress", adress);
         }
 
         // POST: Candidates/Create
@@ -52,14 +88,22 @@ namespace RecruitRW.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,RegistrationDate,ConversationDate,Adress")] Candidate candidate,Adress adress)
+        // public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,RegistrationDate,ConversationDate,Adress")] Candidate candidate,Adress adress)
+        public ActionResult Create(Candidate candidate,Adress adress,IEnumerable<Skill> skill)
         {
             if (ModelState.IsValid)
             {
-
                 db.Candidates.Add(candidate);
                 adress.Candidate = candidate;
                 db.Adresses.Add(adress);
+                if(skill!=null)
+                    foreach(Skill sk in skill)
+                    {
+                        sk.Candidate = candidate;
+                        db.Skills.Add(sk);
+                    }
+              //  skill.Candidate = candidate;
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
