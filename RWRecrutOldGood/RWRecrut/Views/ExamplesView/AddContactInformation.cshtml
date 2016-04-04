@@ -1,0 +1,11 @@
+﻿@model IEnumerable<RWRecrut.Models.CandidateContactModel>
+
+@{
+    Layout = null;
+}
+
+@Html.EditorForMany(x => x)
+
+<p>
+    <input type="submit" value="AddNew" formmethod="post" />
+</p>

@@ -1,0 +1,46 @@
+﻿@model RWRecrut.Models.Skill
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Skill</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CandidateId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CandidateId)
+            @Html.ValidationMessageFor(model => model.CandidateId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SkillTypeId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SkillTypeId)
+            @Html.ValidationMessageFor(model => model.SkillTypeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SkillValue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SkillValue)
+            @Html.ValidationMessageFor(model => model.SkillValue)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

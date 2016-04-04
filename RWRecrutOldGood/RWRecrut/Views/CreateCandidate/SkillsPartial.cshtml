@@ -1,0 +1,44 @@
+﻿@model RWRecrut.Models.CandidateInformation
+
+
+@using (Html.BeginForm())
+{
+
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>*@
+
+    <script src="~/Scripts/jquery-1.4.4.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Skills Information</legend>
+
+        <p>
+
+
+
+            <h3>List of skills</h3>
+            @Html.EditorForMany(x => x.CandidateSkills)
+        <p>
+            <input type="text" id="newSkillType" name="NewSkill.Skill" value="" />
+            <input type="text" id="newSkillValueData" name="NewSkill.SkillValue" value="" />
+        </p>
+
+        <p>
+            <input type="submit" value="Save" formaction="AddNewSkill" />
+        </p>
+
+
+
+    </fieldset>
+
+}
+
+<script type="text/javascript">
+    function example(e)
+        {
+        $("#" + e).remove();
+        }
+</script>
+

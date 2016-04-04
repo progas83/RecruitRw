@@ -1,0 +1,27 @@
+﻿body {
+}
+
+#baseDiv{
+    position: absolute;
+    top: 200px;
+   left: 100px;
+   width: 200px;
+   height: 30px;
+}
+
+#popUpDiv{
+   z-index: 100;
+   position: relative;
+   background-color: rgba(123, 123,123, 0.8);
+   display: none;
+   top: 0;
+   left: 0;
+   width: 200px;
+   height: 300px;
+}
+#popupSelect{
+   z-index: 1000;
+   position: absolute;
+   top: 130px;
+   left: 50px;
+}​

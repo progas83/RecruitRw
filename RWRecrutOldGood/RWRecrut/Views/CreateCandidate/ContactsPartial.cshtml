@@ -1,0 +1,78 @@
+﻿@model RWRecrut.Models.CandidateInformation
+
+
+@using (Html.BeginForm())
+{
+
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>*@
+
+    <script src="~/Scripts/jquery-1.4.4.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<fieldset>
+    <legend>Contact Information</legend>
+
+    <p>
+
+      
+      
+            <h3>List of contacts</h3>
+            @Html.EditorForMany(x => x.CandidateContacts)
+            <p>
+                <input type="text" id="newContactType" name="ContactModel.NewContactType" value="" />
+                <input type="text" id="newContactData" name="ContactModel.NewContactData" value="" />
+            </p>
+            
+    <p>
+        <input type="submit" value="Save" formaction="AddNewContact" />
+    </p>
+    
+
+
+</fieldset>
+
+}
+
+<script type="text/javascript">
+    function example(e)
+        {
+        $("#" + e).remove();
+        }
+</script>
+
+    @*<h3>Current new contact</h3>
+    @Html.EditorFor(x => x.ContactModel)*@
+
+
+    @*<div>
+              @{
+                  foreach (var existedContact in Model.CandidateContacts)
+                  {
+                     @Html.EditorFor(m=>m.ContactModel.NewContactType, existedContact.NewContactType);
+              }
+
+                   @Html.LabelFor()
+                      @Html.TextBoxFor(m => m.ContactModel.NewContactType)
+              }
+          </div>
+
+
+          <div>
+              @Html.LabelFor(m => m.ContactModel.NewContactType)
+              @Html.TextBoxFor(m => m.ContactModel.NewContactType)
+          </div>
+
+          <div>
+              @Html.LabelFor(m => m.ContactModel.NewContactData)
+              @Html.TextBoxFor(m => m.ContactModel.NewContactData)
+          </div>
+
+      </p>
+    @Html.EditorFor(m => m.ContactModel)*@
+
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

@@ -1,0 +1,54 @@
+﻿@model RWRecrut.Models.Adress
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div>
+     
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Street)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Street)
+            @Html.ValidationMessageFor(model => model.Street)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Building)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Building)
+            @Html.ValidationMessageFor(model => model.Building)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Flat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Flat)
+            @Html.ValidationMessageFor(model => model.Flat)
+        </div>
+
+        @*<p>
+            <input type="submit" value="Create" />
+        </p>*@
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
